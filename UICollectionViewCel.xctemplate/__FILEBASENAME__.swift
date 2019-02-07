@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___: UITableViewCell {
+class ___FILEBASENAMEASIDENTIFIER___: UICollectionViewCell {
     
     // MARK: - Componentes UI
     
@@ -19,7 +19,7 @@ class ___FILEBASENAMEASIDENTIFIER___: UITableViewCell {
     // MARK: - Constants
     
     
-    // MARK: - UITableViewCell methods
+    // MARK: - UICollectionViewCell methods
     override func awakeFromNib() {
         super.awakeFromNib()
     }

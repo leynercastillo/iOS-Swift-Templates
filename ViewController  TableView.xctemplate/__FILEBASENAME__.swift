@@ -17,7 +17,6 @@ class ___FILEBASENAMEASIDENTIFIER___: UIViewController, UITableViewDataSource, U
     private var yourArray: [Any]!
     
     // MARK: - Constants
-    private let cellIdentifier = "yourCellIdentifier"
     
     // MARK: - UIViewController methods
     override func viewDidLoad() {
@@ -38,7 +37,7 @@ class ___FILEBASENAMEASIDENTIFIER___: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: customCell.identifier)
         
         return cell!
     }
