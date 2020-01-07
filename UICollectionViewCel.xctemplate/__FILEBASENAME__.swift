@@ -17,7 +17,7 @@ class ___FILEBASENAMEASIDENTIFIER___: UICollectionViewCell {
     
     
     // MARK: - Constants
-    
+    static let cellIdentifier = String(describing: ___FILEBASENAMEASIDENTIFIER___.self)
     
     // MARK: - UICollectionViewCell methods
     override func awakeFromNib() {
@@ -29,6 +29,6 @@ class ___FILEBASENAMEASIDENTIFIER___: UICollectionViewCell {
     }
     
     // MARK: - Custom methods
-    func renderCell() {
+    func render() {
     }
 }
