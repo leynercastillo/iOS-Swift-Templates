@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ___FILEBASENAMEASIDENTIFIER___: UIViewController {
     
     // MARK: - Componentes UI
     @IBOutlet weak var yourTableView: UITableView!
@@ -21,28 +21,42 @@ class ___FILEBASENAMEASIDENTIFIER___: UIViewController, UITableViewDataSource, U
     // MARK: - UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    // MARK: - UITableViewDatasource methods
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    // MARK: - Helper
+    private func setupUI() {
+        setupLocalizedText()
     }
+    
+    private func setupLocalizedText() {
+        
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension ___FILEBASENAMEASIDENTIFIER___: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.yourArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: customCell.identifier)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell.identifier") else {
+            return UITableViewCell()
+        }
         
-        return cell!
+        return cell
     }
-    
-    // MARK: - UITableViewDelegate methods
+}
+
+// MARK: - UITableViewDelegate
+extension ___FILEBASENAMEASIDENTIFIER___: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
