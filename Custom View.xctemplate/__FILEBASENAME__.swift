@@ -14,33 +14,27 @@ class ___FILEBASENAMEASIDENTIFIER___: UIView {
     
     
     // MARK: - Variables
-    var parentView: UIView!
     private var containerView: UIView!
     
     // MARK: - Constants
-    
+    // The XIB should have the same name than the class name
+    private let nibName = String(describing: ___FILEBASENAMEASIDENTIFIER___.self)
     
     // MARK: - UIView methods
-    init(view: UIView, nibName: String) {
-        super.init(frame: view.bounds)
-        self.configurateUI(view: view, nibName: nibName)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.configurateUI(nibName: nibName)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    // MARK: - Utils methods
-    private func configurateUI(view: UIView, nibName: String) {
+    // MARK: - Helper methods
+    private func configurateUI(nibName: String) {
         if let containerView = self.loadXIB(nibName: nibName) {
             self.containerView = containerView
-            
-            // UIView will be default hide
-            self.alpha = 0
-            
-            view.addSubview(self)
             self.addSubview(self.containerView)
-            self.parentView = view
         }
     }
     
@@ -58,14 +52,14 @@ class ___FILEBASENAMEASIDENTIFIER___: UIView {
     
     // MARK: - Object methods
     // A simple fade in method for the UIView
-    func mostrarView() {
+    func showView() {
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1
         })
     }
     
     // A simple fade out method for the UIView
-    func ocultarView() {
+    func hideView() {
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 0
         }, completion: { (success) in
